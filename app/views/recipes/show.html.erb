@@ -4,4 +4,7 @@
   <h3>Directions: <%= @recipe.directions %></h3>
 
   <a href="/recipes">Home</a>
-  <a href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
+  <a class="btn btn-info" href="/recipes/<%= @recipe.id %>/edit">Edit Recipe</a>
+  <%= form_tag "/recipes/#{@recipe.id}", method: :delete do %>
+    <input class="btn btn-danger" type="submit" value="remove recipe">
+  <% end %>
