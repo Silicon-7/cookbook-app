@@ -2,16 +2,20 @@
 
 <%= form_tag "/recipes", method: :post do %>
   <div>
-    Title: <input type="text" name="title">
+    <%= label_tag :title %>
+    <%= text_field_tag :title, nil, placeholder: "Title" %>
   </div>
   <div>
-    Chef: <input type="text" name="chef">
+    <%= label_tag :chef %>
+    <%= text_field_tag :chef %>
   </div>
   <div>
-    Ingredients: <input type="text" name="ingredients">
+    <%= label_tag :ingredients %>
+    <%= text_field_tag :ingredients %>
   </div>
   <div>
-    Directions: <input type="text" name="directions">
+    <%= label_tag :directions %>
+    <%= text_field_tag :directions %>
   </div>
-  <input type="submit" value="Write Recipe on Card">
+  <%= submit_tag "Write Recipe on Card" %>
 <% end %>
