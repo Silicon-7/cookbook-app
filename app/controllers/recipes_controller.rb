@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
     recipe = Recipe.find(params[:id])
     recipe.destroy
 
-    flash[:success] = "Recipe #{recipe.title} Destroyed Successfully"
+    flash[:warning] = "Recipe #{recipe.title} Destroyed Successfully"
     redirect_to "/recipes"
   end
 end
