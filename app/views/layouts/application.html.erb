@@ -25,6 +25,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+
+          <% if current_user %>
+            <li class="nav-text">Hi, <%= current_user.name %></li>
+          <% end %>
+          
           </ul>
           <form class="navbar-form navbar-left">
             <div class="form-group">
@@ -43,9 +48,14 @@
                 <li><a href="/recipes?sort=chef">Sort by Chef</a></li>
                 <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="/signup">Sign Up</a></li>
-                <li><a href="/login">Log In</a></li>
-                <li><a href="/logout">Log Out</a></li>
+                
+                <% if current_user %>
+                  <li><a href="/logout">Log Out</a></li>
+                <% else %>
+                  <li><a href="/signup">Sign Up</a></li>
+                  <li><a href="/login">Log In</a></li>
+                <% end %>
+                
               </ul>
             </li>
           </ul>

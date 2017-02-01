@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     sort_attribute = params[:sort]
 
     if sort_attribute
-      @recipes = Recipe.all.order(sort_attribute)
+      @recipes = @recipes.order(sort_attribute)
     end
   end
 
